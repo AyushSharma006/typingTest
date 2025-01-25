@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#28282B;
+}
+
+.navbar {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    color: gold;
+    font-family: 'Roboto', sans-serif; 
+}
+
+#heading {
+    font-style: italic;
+    font-size: 30px;
+}
+
+.correct {
+    color: gold;
+}
+
+.incorrect {
+    background-color: crimson;
+    color: #28282B;
+}
+
+.section {
+    width: 100%;
+    height: calc(100vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    line-height: 25px;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: larger;
+    color: darkgrey;
+}
+
+.main-container {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    width: 1200px;
+    padding: 20px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+#reset-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: darkgray;
+    font-size: large;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+input {
+    background-color: transparent;
+    position: absolute;
+    padding: 3px 3px;
+    opacity: 0;
+}
+
+.res {
+    display: flex;
+    gap: 7px;
+}
+
+#timer {
+    color: gold;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.result-container {
+    display: flex;
+    color: gold;
+    font-weight: 600;
+    font-size: 14px;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+#reset-btn:hover {
+    color: gold;
+}
+
+::selection {
+    color: #28282B;
+    background-color: gold;
+}
+
+.active {
+    border-left: 2px solid whitesmoke;
+}
