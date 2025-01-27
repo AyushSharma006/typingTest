@@ -13,6 +13,13 @@
     font-family: 'Roboto', sans-serif; 
 }
 
+#type {
+    z-index: 999;
+    color: darkgray;
+    font-size: medium;
+    font-family:'Courier New', Courier, monospace;
+}
+
 #heading {
     font-style: italic;
     font-size: 30px;
@@ -29,23 +36,23 @@
 
 .section {
     width: 100%;
-    height: calc(100vh);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 p {
-    line-height: 25px;
+    line-height: 30px;
     word-spacing: 5px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-weight: 500;
     font-size: larger;
     color: darkgrey;
 }
 
 .main-container {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 500;
     font-size: large;
     display: flex;

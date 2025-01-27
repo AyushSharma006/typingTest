@@ -4,6 +4,7 @@ const wpm = document.getElementById("wpm");
 const mistakes = document.getElementById("mistakes");
 const input = document.getElementById("in");
 const reset = document.getElementById('reset-btn');
+const type = document.getElementById('type');
 
 function loadPara() {
   const para = [
@@ -45,8 +46,9 @@ input.addEventListener("keydown", (e) => {
   const char = typingText.querySelectorAll("span");
   const typedCharacter = e.key;
   const currChar = char[charIndex].innerText;
+  type.innerHTML = "";
 
-  if (charIndex < char.length && time > 0) {
+  if (charIndex < char.length && time > 0) {    
 
     if (!isTyping) {
       isTyping = true;
@@ -57,7 +59,6 @@ input.addEventListener("keydown", (e) => {
           if (maxTime - time > 0) {
             let wpmC = Math.round(((charIndex - mistakeCount) / 5) / (maxTime - time) * 60);
             wpm.innerText = wpmC;
-            
           }
         } else {
           clearInterval(typer);
@@ -66,21 +67,23 @@ input.addEventListener("keydown", (e) => {
       }, 1000);
     }
 
+    char[charIndex].classList.remove('active');
+
     if (typedCharacter === currChar) {
       char[charIndex].classList.add("correct");
+      ++charIndex;
+    } else if (typedCharacter === 'Shift' || typedCharacter === 'CapsLock') {
+      charIndex = charIndex;
     } else {
       char[charIndex].classList.add("incorrect");
       mistakeCount++;
+      ++charIndex;
     }
 
-    char[charIndex].classList.remove('active');
-
-    ++charIndex;
-
-    if(charIndex < char.length) {
+    if (charIndex < char.length) {
       char[charIndex].classList.add('active');
     }
-    
+
     mistakes.innerHTML = mistakeCount;
   }
 });
@@ -95,6 +98,7 @@ reset.addEventListener('click', () => {
   time = maxTime;
   isTyping = false;
   charIndex = 0;
+  type.innerHTML = "Type to start";
   clearInterval(typer);
   loadPara();
 });
